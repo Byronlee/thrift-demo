@@ -9,7 +9,7 @@ require 'myauth_constants'
 
 
 begin
-  transport = Thrift::BufferedTransport.new(Thrift::Socket.new('127.0.0.1', 9090,5))
+  transport = Thrift::BufferedTransport.new(Thrift::Socket.new('localhost', 9090,5))
   protocol = Thrift::BinaryProtocol.new(transport)
   auth = MyAuth::Authentication::Client.new(protocol)
   transport.open()
